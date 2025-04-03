@@ -1,0 +1,615 @@
+
+
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Robotobold.ttf");
+    font-weight: bold;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+/*шапка сайта*/
+
+.header {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 25px 0px;
+    position: relative;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    vertical-align: bottom;
+}
+
+/*бургер*/
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 20px;
+}
+
+.burger span {
+    width: 80%;
+    height: 2px;
+    transform: scale(1);
+    background-color: rgb(0, 0, 0);
+}
+
+.burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transform: all 0.3s ease 0s;
+    background-color: rgb(0, 0, 0);
+}
+
+.burger::before {
+    top: 0;
+}
+
+.burger::after {
+    bottom: 0;
+}
+
+.burger.active span {
+    transform: scale(0);
+}
+
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+
+
+.menu {
+    margin-left: 244px;
+    display: flex;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu-item {
+    margin-right: 115px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #030305;
+    font-size: 15px;
+}
+
+.menu-item a:hover {
+    border-bottom: 2px solid #575757;
+    color: #575757;
+}
+
+/*Первая секция*/
+
+.main {
+    background-image: url(../img/background.png);
+    background-position: center;
+    background-size: cover;
+    padding: 104px 0px 154px 0px;
+}
+
+.main-info {
+    max-width: 855px;
+}
+
+.main-title {
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 110%;
+    color: #030305;
+    margin-bottom: 40px;
+}
+
+.main-text {
+    max-width: 502px;
+    font-size: 16px;
+    line-height: 130%;
+    color: #030305;
+    margin-bottom: 40px;
+}
+
+.button {
+    width: 334px;
+    height: 64px;
+    background: #030305;
+    padding: 20px;
+    border: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: background-color .5s;
+}
+
+.button:hover {
+    background: #575757;
+    cursor: pointer;
+}
+
+/*Вторая секция / второй экран*/
+
+.car {
+    padding: 100px 0;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: bold;
+    color: #030305;
+    line-height: 70px;
+}
+
+.car-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.car-item {
+    max-width: 384px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.car-item-title {
+    font-size: 24px;
+    color: #030305;
+    font-weight: bold;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 15px 0 17px 0;
+}
+
+/*ср*/
+
+.car-item-icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.car-item-text {
+    margin-top: 11px;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: #030305;
+}
+
+/*Третья секция / третий экран*/
+
+.price {
+    overflow: hidden;
+}
+
+.price .container {
+    position: relative;
+    padding-bottom: 121px;
+}
+
+.price .sub-title {
+    margin-bottom: 20px;
+}
+
+.price-text {
+    color: #5D5D5F;
+    line-height: 130%;
+    font-size: 16px;
+    margin-bottom: 60px;
+}
+
+.price-form {
+    max-width: 344px;
+}
+
+.price-input {
+    padding: 22px 18px;
+    width: 344px;
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #5D5D5F;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.price-input::placeholder {
+    color: #5D5D5F;
+}
+
+.price .button {
+    width: 100%;
+}
+
+.price-image {
+    position: absolute;
+    bottom: 0px;
+    left: 401px;
+}
+
+/*подвал*/
+
+.footer {
+    border-top: 1px solid #E5E5E5;
+    padding: 25px 0;
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rights {
+    font-size: 15px;
+    color: #030305;
+}
+
+.open {
+    display: flex !important;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .main-text {
+        max-width: 372px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: rgb(71, 66, 66);
+    }
+
+    .menu ul {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .menu-item a {
+        color: #fff;
+    }
+
+
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .menu {
+        margin-left: 0;
+    }
+
+    .main {
+        background-image: none;
+        padding: 50px 0 50px 0;
+    }
+
+    .main-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .main-text {
+        max-width: 100%;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        width:100%;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .car {
+        padding: 50px 0;
+    }
+
+    .car-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .car-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .sub-title {
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .price-form {
+        max-width: 100%;
+    }
+
+    .price-input {
+        width: 100%;
+    }
+    
+    .price-image {
+        display: none;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px){
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .menu {
+        margin-left: 0;
+    }
+
+    .main {
+        background-image: none;
+        padding: 50px 0 50px 0;
+    }
+
+    .main-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .main-text {
+        max-width: 100%;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        width: 50%;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .car {
+        padding: 50px 0;
+    }
+
+    .car-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .car-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .sub-title {
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .price-form {
+        max-width: 100%;
+    }
+
+    .price-input {
+        width: 100%;
+    }
+    
+    .price-image {
+        display: none;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    
+
+
+@media (max-width: 360px) {
+
+    
+    
+    /*общий контейнер*/
+    .container {
+        padding: 0 20px;
+        align-items: center;
+    }
+
+    /*шапка*/
+
+    .header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .menu {
+        margin-left: 0;
+    }
+
+    /*глав заголовок и текст*/
+
+    .main {
+        background-image: none;
+        padding: 50px 0 50px 0;
+    }
+
+    .main-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .main-text {
+        max-width: 100%;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        width: 100%;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    /*карточки автомобилей*/
+
+    .car {
+        padding: 50px 0;
+    }
+
+    .car-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .car-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /*Форма брони*/
+
+    .sub-title {
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .price-form {
+        max-width: 100%;
+    }
+
+    .price-input {
+        width: 100%;
+    }
+    
+    .price-image {
+        display: none;
+    }
+
+    /*Подвал*/
+
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@keyframes slideIn {
+    from { transform: rotateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.menu {
+    animation: slideIn 0.3s ease-out;
+}
